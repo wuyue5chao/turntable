@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+/*抽奖转盘*/
+.circle-wrapper{
+	background: url(images/g-prize.png) no-repeat 0 0;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	margin: 50px auto;
+	background-size: 100%;
+	box-sizing: content-box;
+	padding: 20px;
+	overflow: hidden;
+	position: relative;
+}
+.circle-box{
+	position: relative;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	overflow: hidden;	
+}
+.circle-box li{
+	position: absolute;
+	width: 160px;
+	height: 160px;
+	top: 50%;
+	left: 50%;
+	margin-left: -160px;
+	margin-top: -160px;
+	background: hsla(0,88%,80%,.9);
+	transform:rotate(0deg) skew(30deg);
+	transform-origin: 100% 100%;
+	border: 1px solid #fe103c;
+	overflow: hidden;
+	
+}
+.circle-box li:first-child{
+	
+}
+.circle-box li:nth-child(2){
+	transform: rotate(60deg) skew(30deg);   /*圆心角60deg 斜拉(90-60deg)*/
+}
+.circle-box li:nth-child(3){
+	transform: rotate(120deg) skew(30deg);
+}
+.circle-box li:nth-child(4){
+	transform: rotate(180deg) skew(30deg);
+}
+.circle-box li:nth-child(5){
+	transform: rotate(-120deg) skew(30deg);
+}
+.circle-box li:nth-child(6){
+	transform: rotate(-60deg) skew(30deg);
+}
+.circle-box li:nth-child(odd){
+	background-color:#f7ffc4;
+}
+.circle-box li:nth-child(even){
+	background-color:#10d1ed;
+}
+.circle-box li span{
+	display: block;
+	position: absolute;
+	bottom: -120px;
+	right: -120px;
+	width: 240px;
+	height: 240px;
+	text-align: center;
+	transform: skew(-30deg) rotate(-60deg);
+}
+</style>
+</head>
+<body>
+	<div class="circle-wrapper" style="transform: rotate(60deg);">
+		<div class="circle-box">
+			<ul>
+				<li><span>001</span></li>
+				<li><span>002</span></li>
+				<li><span>003</span></li>
+				<li><span>004</span></li>
+				<li><span>005</span></li>
+				<li><span>006</span></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
